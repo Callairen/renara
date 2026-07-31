@@ -18,7 +18,6 @@ export default function Home({ bubbles, loggedInFriend }) {
             <Head title="Home - The Letter" />
 
             {/* Tempat Video Background */}
-            {/* Nanti ganti 'src' dengan file videomu yang ditaruh di folder public */}
             <video 
                 autoPlay 
                 loop 
@@ -26,7 +25,7 @@ export default function Home({ bubbles, loggedInFriend }) {
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover opacity-60"
             >
-                {/* <source src="/background-video.mp4" type="video/mp4" /> */}
+                <source src="/background.mp4" type="video/mp4" />
             </video>
 
             {/* Floating Bubbles Overlay */}
