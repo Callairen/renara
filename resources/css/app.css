@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animasi untuk Floating Bubbles */
+@keyframes float {
+    0% { transform: translateY(100vh); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-150px); opacity: 0; }
+}
+
+.animate-float {
+    animation: float 15s linear infinite;
+}
+
+/* Efek Kaca Premium (Lavender Glassmorphism) */
+.glass-lavender {
+    background: rgba(245, 232, 255, 0.25);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
