@@ -22,3 +22,25 @@
     border: 1px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
 }
+
+
+/* Animasi Hujan Kelopak Lavender */
+@keyframes falling-petals {
+    0% { transform: translateY(-10vh) rotate(0deg) scale(0.5); opacity: 0; }
+    20% { opacity: 1; scale: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg) scale(0.8); opacity: 0; }
+}
+
+.petal {
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    background: linear-gradient(135deg, #d8b4e2 0%, #c084d1 100%);
+    border-radius: 15px 0 15px 0;
+    animation: falling-petals linear forwards;
+}
+
+/* Transisi Halus untuk Fade */
+.fade-in { animation: fadeIn 1s ease-in forwards; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
