@@ -54,25 +54,27 @@ a, button, input, select, textarea {
     cursor: none;
 }
 
-/* Animasi Kursor Custom */
+/* Animasi Kursor Custom (Glass-like Ungu) */
 .custom-cursor {
     position: fixed;
     top: 0;
     left: 0;
     width: 24px;
     height: 24px;
-    background-color: #d8b4e2; /* Ungu muda */
+    background-color: rgba(216, 180, 226, 0.4); /* Ungu muda transparan */
+    backdrop-filter: blur(4px); /* Efek kaca (blur) */
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Pantulan cahaya di ujung kursor */
     border-radius: 50%;
-    pointer-events: none; /* Agar tidak menghalangi klik */
+    pointer-events: none;
     z-index: 99999;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease, border 0.2s ease;
     transform: translate(-50%, -50%);
-    mix-blend-mode: difference; /* Memberikan efek kontras saat melewati shape terang/gelap */
 }
 
 /* Kursor saat mengenai elemen interaktif (hover) */
 .custom-cursor.hovering {
     transform: translate(-50%, -50%) scale(2.5);
-    background-color: #ffffff;
+    background-color: rgba(216, 180, 226, 0.2); /* Sedikit lebih pudar saat membesar */
+    border: 1px solid rgba(255, 255, 255, 0.6);
 }
-
