@@ -1,7 +1,6 @@
 import { useForm } from '@inertiajs/react';
 import { Head, Link } from '@inertiajs/react';
-import CustomCursor from '@/Components/CustomCursor';
-
+import CustomCursor from '../Components/CustomCursor';
 export default function Home({ bubbles, loggedInFriend }) {
     const { data, setData, post, processing, errors } = useForm({
         username: '',

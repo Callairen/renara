@@ -1,6 +1,5 @@
 import { Link } from '@inertiajs/react';
-import CustomCursor from '@/Components/CustomCursor';
-
+import CustomCursor from '../Components/CustomCursor';
 export default function MainLayout({ children }) {
     return (
         <div className="min-h-screen bg-black relative overflow-x-hidden">
