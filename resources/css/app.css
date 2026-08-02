@@ -44,3 +44,35 @@
 /* Transisi Halus untuk Fade */
 .fade-in { animation: fadeIn 1s ease-in forwards; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Menyembunyikan kursor bawaan */
+body {
+    cursor: none;
+}
+
+a, button, input, select, textarea {
+    cursor: none;
+}
+
+/* Animasi Kursor Custom */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background-color: #d8b4e2; /* Ungu muda */
+    border-radius: 50%;
+    pointer-events: none; /* Agar tidak menghalangi klik */
+    z-index: 99999;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference; /* Memberikan efek kontras saat melewati shape terang/gelap */
+}
+
+/* Kursor saat mengenai elemen interaktif (hover) */
+.custom-cursor.hovering {
+    transform: translate(-50%, -50%) scale(2.5);
+    background-color: #ffffff;
+}
+
