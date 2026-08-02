@@ -89,13 +89,24 @@ export default function Yours({ friend }) {
             </div>
 
             {/* 3. SONG SECTION */}
-            <div className="max-w-md mx-auto glass-lavender rounded-full p-3 flex items-center gap-4 mb-20 shadow-xl fade-in" style={{animationDelay: '0.5s'}}>
-                <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center animate-[spin_4s_linear_infinite] shadow-lg">
-                    <div className="w-4 h-4 bg-black rounded-full"></div>
+            <div className="max-w-md mx-auto mb-20 fade-in relative z-20" style={{animationDelay: '0.5s'}}>
+                <div className="text-center mb-5">
+                    <p className="text-white font-medium tracking-wide text-lg drop-shadow-md">
+                        Song yg mengingatkanku ke {friend.nickname_utama || friend.nama_lengkap}
+                    </p>
                 </div>
-                <div>
-                    <p className="text-white font-bold text-sm">Lagu yang mengingatkanku padamu</p>
-                    <p className="text-white/60 text-xs">Now playing...</p>
+                
+                <div className="w-full rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(216,180,226,0.15)] border border-white/10">
+                    <iframe 
+                        style={{ borderRadius: '12px' }} 
+                        src="https://open.spotify.com/embed/track/3n3Ppam7vgaVa1iaRUc9Lp?utm_source=generator&theme=0" 
+                        width="100%" 
+                        height="152" 
+                        frameBorder="0" 
+                        allowFullScreen="" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy">
+                    </iframe>
                 </div>
             </div>
 
