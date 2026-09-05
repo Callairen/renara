@@ -15,11 +15,31 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Daftar pengguna yang akan di-seed ke dalam database
+        $users = [
+            [
+                'name' => 'ren',
+                'email' => 'ren@gmail.com',
+                'password' => bcrypt('rena'),
+            ],
+            [
+                'name' => 'Test User',
+                'email' => 'test@example.com',
+                'password' => bcrypt('password'),
+            ],
+            // Tambahkan kredensial pengguna lain di sini jika diperlukan
+        ];
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // Eksekusi pembuatan data
+        foreach ($users as $user) {
+            User::firstOrCreate(
+                ['email' => $user['email']], // Kunci pencarian agar tidak duplikat
+                [
+                    'name' => $user['name'],
+                    'password' => $user['password'],
+                    'email_verified_at' => now(), // Mem-bypass verifikasi email
+                ]
+            );
+        }
     }
 }
